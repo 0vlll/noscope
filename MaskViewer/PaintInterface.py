@@ -21,6 +21,7 @@ class PaintInterface(qtw.QScrollArea):
         self.horizontalScrollBar().setStyleSheet("QScrollBar {height:0px;}")
         self.setWidgetResizable(True)
         self.setAlignment(qtc.Qt.Alignment.AlignCenter)
+        self.setFrameShape(qtw.QFrame.Shape.NoFrame)
 
         # setting content widget
         self.contents = qtw.QWidget()
