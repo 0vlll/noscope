@@ -4,6 +4,8 @@ from PyQt6 import QtGui as qtg
 from UI.MainWindowUI import Ui_MainWindow
 from MaskViewer import PaintInterface
 
+MIN_SIZE, MAX_SIZE = 0, 16777215
+
 class MainWindow(qtw.QMainWindow):
     def __init__(self):
         super().__init__()
@@ -11,67 +13,93 @@ class MainWindow(qtw.QMainWindow):
         self.ui.setupUi(self)
 
         self.animation = qtc.QPropertyAnimation()
+        self.fade_animation = qtc.QPropertyAnimation()
+        self.unfade_animation = qtc.QPropertyAnimation()
         self.side_menu_toggle_speed = 800
-        self.easing_curve = qtc.QEasingCurve()
-        self.easing_curve.setType(qtc.QEasingCurve.Type.OutQuint)
+        self.side_menu_swap_speed = 120
+        self.easing_curve = qtc.QEasingCurve(qtc.QEasingCurve.Type.OutQuint)
 
-        self.ui.stackedWidget.setCurrentWidget(self.ui.file_page)
-        self.ui.paint_interface = PaintInterface.PaintInterface(self.ui.widget_11)
-        self.ui.verticalLayout_15 = qtw.QVBoxLayout(self.ui.widget_11)
-        self.ui.verticalLayout_15.setSpacing(0)
-        self.ui.verticalLayout_15.addWidget(self.ui.paint_interface)
+        self.ui.splitter.setCollapsible(0, True)
+        self.ui.splitter.setCollapsible(1, False)
+        
+        self.ui.paint_interface = PaintInterface.PaintInterface(self.ui.paint_interface_container)
+        self.ui.paint_interface_layout = qtw.QVBoxLayout(self.ui.paint_interface_container)
+        self.ui.paint_interface_layout.setSpacing(0)
+        self.ui.paint_interface_layout.addWidget(self.ui.paint_interface)
+        
         self.ui.scrollArea.verticalScrollBar().setStyleSheet('QScrollBar {width:0px;}')
+        self.ui.stackedWidget.setCurrentWidget(self.ui.file_page)
+        
         self.ui.file_button.clicked.connect(self.file_information_toggle)
         self.ui.mask_button.clicked.connect(self.mask_settings_toggle)
         self.ui.clip_button.clicked.connect(self.clip_information_toggle)
 
+    ######################### Side Menu Operations #########################
+
     def file_information_toggle(self):
-        self.animation.stop()
-        if self.ui.scrollArea.maximumWidth() <= 125:
+        if self.ui.scrollArea.width() <= 125:
             self.ui.stackedWidget.setCurrentWidget(self.ui.file_page)
-            self.maximize_side_menu()
+            self.toggle_side_menu()
         else:
             if self.ui.stackedWidget.currentWidget().objectName() != 'file_page':
-                self.set_side_menu(self.ui.file_page)
+                self.fade_swap_page(self.ui.file_page)
             else:
-                self.minimize_side_menu()
+                self.toggle_side_menu()
     
     def mask_settings_toggle(self):
-        if self.ui.scrollArea.maximumWidth() <= 125:
+        if self.ui.scrollArea.width() <= 125:
             self.ui.stackedWidget.setCurrentWidget(self.ui.mask_page)
-            self.maximize_side_menu()
+            self.toggle_side_menu()
         else:
             if self.ui.stackedWidget.currentWidget().objectName() != 'mask_page':
-                self.set_side_menu(self.ui.mask_page)
+                self.fade_swap_page(self.ui.mask_page)
             else:
-                self.minimize_side_menu()
+                self.toggle_side_menu()
 
     def clip_information_toggle(self):
-        self.animation.stop()
-        if self.ui.scrollArea.maximumWidth() <= 125:
+        if self.ui.scrollArea.width() <= 125:
             self.ui.stackedWidget.setCurrentWidget(self.ui.clip_page)
-            self.maximize_side_menu()
+            self.toggle_side_menu()
         else:
             if self.ui.stackedWidget.currentWidget().objectName() != 'clip_page':
-                self.set_side_menu(self.ui.clip_page)
+                self.fade_swap_page(self.ui.clip_page)
             else:
-                self.minimize_side_menu()
+                self.toggle_side_menu()
 
-    def set_side_menu(self, widget: qtw.QWidget):
-        self.ui.stackedWidget.setCurrentWidget(widget)
+    def fade_swap_page(self, widget: qtw.QWidget):
+        opacity = qtw.QGraphicsOpacityEffect(self.ui.scrollArea)
+        self.ui.scrollArea.setGraphicsEffect(opacity)
+        self.fade_animation = qtc.QPropertyAnimation(opacity, b'opacity')
+        self.fade_animation.setDuration(self.side_menu_swap_speed)
+        self.fade_animation.setEndValue(0)
+        self.fade_animation.setStartValue(1)
+        self.fade_animation.start()
+        self.unfade_animation = qtc.QPropertyAnimation(opacity, b'opacity')
+        self.unfade_animation.setDuration(self.side_menu_swap_speed)
+        self.unfade_animation.setEndValue(1)
+        self.unfade_animation.setStartValue(0)
+        self.fade_animation.finished.connect(lambda: self.ui.stackedWidget.setCurrentWidget(widget))
+        self.fade_animation.finished.connect(lambda: self.unfade_animation.start())
 
-
-    
-    def minimize_side_menu(self):
-        self.animation = qtc.QPropertyAnimation(self.ui.scrollArea, b'maximumWidth')
-        self.animation.setEasingCurve(self.easing_curve)
-        self.animation.setEndValue(0)
+    def toggle_side_menu(self):
+        self.animation = qtc.QVariantAnimation()
         self.animation.setDuration(self.side_menu_toggle_speed)
-        self.animation.start()
-
-    def maximize_side_menu(self):
-        self.animation = qtc.QPropertyAnimation(self.ui.scrollArea, b'maximumWidth')
         self.animation.setEasingCurve(self.easing_curve)
-        self.animation.setEndValue(250)
-        self.animation.setDuration(self.side_menu_toggle_speed)
-        self.animation.start()
+
+        if self.ui.scrollArea.width() > 250:
+            self.animation.setEndValue(250)
+            self.animation.setStartValue(self.ui.splitter.sizes()[0])
+        elif self.ui.scrollArea.width() <= 125:
+            self.animation.setEndValue(250)
+            self.animation.setStartValue(MIN_SIZE)
+        else:
+            self.animation.setEndValue(MIN_SIZE)
+            self.animation.setStartValue(self.ui.splitter.sizes()[0])
+        self.animation.valueChanged.connect(self.onValueChanged)
+        self.animation.start()        
+
+    def onValueChanged(self, value):
+        self.ui.scrollArea.setMaximumWidth(value)
+        self.ui.splitter.setSizes([value, self.ui.splitter.sizes()[1]])
+        self.animation.finished.connect(lambda: self.ui.splitter.setSizes(self.ui.splitter.sizes()))
+        self.animation.finished.connect(lambda: self.ui.scrollArea.setMaximumWidth(MAX_SIZE))

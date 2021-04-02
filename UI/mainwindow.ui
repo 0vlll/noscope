@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>887</width>
-    <height>701</height>
+    <width>1000</width>
+    <height>754</height>
    </rect>
   </property>
   <property name="focusPolicy">
@@ -47,21 +47,6 @@
     <item>
      <widget class="QWidget" name="widget" native="true">
       <layout class="QHBoxLayout" name="horizontalLayout">
-       <property name="spacing">
-        <number>12</number>
-       </property>
-       <property name="leftMargin">
-        <number>0</number>
-       </property>
-       <property name="topMargin">
-        <number>0</number>
-       </property>
-       <property name="rightMargin">
-        <number>0</number>
-       </property>
-       <property name="bottomMargin">
-        <number>0</number>
-       </property>
        <item>
         <widget class="QWidget" name="side_menu" native="true">
          <property name="minimumSize">
@@ -231,7 +216,7 @@ QPushButton:pressed{
         </widget>
        </item>
        <item>
-        <widget class="QWidget" name="vertica_divider_2" native="true">
+        <widget class="QWidget" name="vertical_divider_side_menu" native="true">
          <property name="minimumSize">
           <size>
            <width>3</width>
@@ -253,180 +238,208 @@ QPushButton:pressed{
         </widget>
        </item>
        <item>
-        <widget class="QScrollArea" name="scrollArea">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
+        <widget class="QSplitter" name="splitter">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
          </property>
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>0</height>
-          </size>
+         <property name="handleWidth">
+          <number>20</number>
          </property>
-         <property name="maximumSize">
-          <size>
-           <width>250</width>
-           <height>16777215</height>
-          </size>
+         <property name="childrenCollapsible">
+          <bool>false</bool>
          </property>
-         <property name="layoutDirection">
-          <enum>Qt::RightToLeft</enum>
-         </property>
-         <property name="frameShape">
-          <enum>QFrame::NoFrame</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Plain</enum>
-         </property>
-         <property name="lineWidth">
-          <number>0</number>
-         </property>
-         <property name="horizontalScrollBarPolicy">
-          <enum>Qt::ScrollBarAlwaysOff</enum>
-         </property>
-         <property name="widgetResizable">
-          <bool>true</bool>
-         </property>
-         <widget class="QWidget" name="scrollAreaWidgetContents">
-          <property name="geometry">
-           <rect>
-            <x>-15</x>
-            <y>0</y>
-            <width>218</width>
-            <height>681</height>
-           </rect>
+         <widget class="QScrollArea" name="scrollArea">
+          <property name="enabled">
+           <bool>true</bool>
           </property>
-          <layout class="QHBoxLayout" name="horizontalLayout_4">
-           <property name="spacing">
-            <number>0</number>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="baseSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="layoutDirection">
+           <enum>Qt::RightToLeft</enum>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::NoFrame</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Plain</enum>
+          </property>
+          <property name="lineWidth">
+           <number>0</number>
+          </property>
+          <property name="horizontalScrollBarPolicy">
+           <enum>Qt::ScrollBarAlwaysOff</enum>
+          </property>
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <widget class="QWidget" name="scrollAreaWidgetContents">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>387</width>
+             <height>690</height>
+            </rect>
            </property>
-           <property name="leftMargin">
-            <number>0</number>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
            </property>
-           <property name="topMargin">
-            <number>0</number>
-           </property>
-           <property name="rightMargin">
-            <number>0</number>
-           </property>
-           <property name="bottomMargin">
-            <number>0</number>
-           </property>
-           <item>
-            <widget class="QStackedWidget" name="stackedWidget">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>0</height>
-              </size>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>16777215</width>
-               <height>16777215</height>
-              </size>
-             </property>
-             <property name="styleSheet">
-              <string notr="true"/>
-             </property>
-             <property name="currentIndex">
-              <number>1</number>
-             </property>
-             <widget class="QWidget" name="file_page">
+           <layout class="QHBoxLayout" name="horizontalLayout_4">
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QStackedWidget" name="stackedWidget">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>16777215</height>
+               </size>
+              </property>
               <property name="styleSheet">
                <string notr="true"/>
               </property>
-              <layout class="QVBoxLayout" name="verticalLayout_4" stretch="1,6">
-               <property name="spacing">
-                <number>0</number>
+              <property name="currentIndex">
+               <number>2</number>
+              </property>
+              <widget class="QWidget" name="file_page">
+               <property name="styleSheet">
+                <string notr="true"/>
                </property>
-               <property name="leftMargin">
-                <number>0</number>
-               </property>
-               <property name="topMargin">
-                <number>0</number>
-               </property>
-               <property name="rightMargin">
-                <number>0</number>
-               </property>
-               <property name="bottomMargin">
-                <number>0</number>
-               </property>
-               <item>
-                <widget class="QLabel" name="file_title">
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>90</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>16777215</width>
-                   <height>90</height>
-                  </size>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <pointsize>20</pointsize>
-                  </font>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">QLabel{
+               <layout class="QVBoxLayout" name="verticalLayout_4" stretch="1,6">
+                <property name="spacing">
+                 <number>0</number>
+                </property>
+                <property name="leftMargin">
+                 <number>0</number>
+                </property>
+                <property name="topMargin">
+                 <number>0</number>
+                </property>
+                <property name="rightMargin">
+                 <number>0</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
+                <item>
+                 <widget class="QLabel" name="file_title">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>90</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>16777215</width>
+                    <height>90</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <pointsize>20</pointsize>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QLabel{
 	color: white;
 }</string>
-                 </property>
-                 <property name="text">
-                  <string>File Information</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item alignment="Qt::AlignTop">
-                <widget class="QWidget" name="widget_2" native="true">
-                 <property name="minimumSize">
-                  <size>
-                   <width>200</width>
-                   <height>0</height>
-                  </size>
-                 </property>
-                 <layout class="QVBoxLayout" name="verticalLayout_7">
-                  <property name="spacing">
-                   <number>30</number>
                   </property>
-                  <property name="leftMargin">
-                   <number>12</number>
+                  <property name="text">
+                   <string>File Information</string>
                   </property>
-                  <property name="topMargin">
-                   <number>0</number>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
                   </property>
-                  <property name="rightMargin">
-                   <number>12</number>
+                 </widget>
+                </item>
+                <item alignment="Qt::AlignTop">
+                 <widget class="QWidget" name="file_button_container" native="true">
+                  <property name="minimumSize">
+                   <size>
+                    <width>200</width>
+                    <height>0</height>
+                   </size>
                   </property>
-                  <property name="bottomMargin">
-                   <number>12</number>
-                  </property>
-                  <item>
-                   <widget class="QPushButton" name="mask_dir_button">
-                    <property name="minimumSize">
-                     <size>
-                      <width>0</width>
-                      <height>65</height>
-                     </size>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">QPushButton{
+                  <layout class="QVBoxLayout" name="verticalLayout_7">
+                   <property name="spacing">
+                    <number>30</number>
+                   </property>
+                   <property name="leftMargin">
+                    <number>12</number>
+                   </property>
+                   <property name="topMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>12</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>12</number>
+                   </property>
+                   <item>
+                    <widget class="QPushButton" name="mask_dir_button">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>65</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QPushButton{
 	border: none;
 	background-color: rgb(33,33, 40);
 	color:white;
@@ -438,22 +451,22 @@ QPushButton:hover{
 QPushButton:pressed{
 	background-color: rgb(47, 48, 60);
 }</string>
-                    </property>
-                    <property name="text">
-                     <string>Get Mask Directory</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="image_dir_button">
-                    <property name="minimumSize">
-                     <size>
-                      <width>0</width>
-                      <height>65</height>
-                     </size>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">QPushButton{
+                     </property>
+                     <property name="text">
+                      <string>Get Mask Directory</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="image_dir_button">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>65</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QPushButton{
 	border: none;
 	background-color: rgb(33,33, 40);
 	color:white;
@@ -465,22 +478,22 @@ QPushButton:hover{
 QPushButton:pressed{
 	background-color: rgb(47, 48, 60);
 }</string>
-                    </property>
-                    <property name="text">
-                     <string>Get Image Directory</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="output_dir_button">
-                    <property name="minimumSize">
-                     <size>
-                      <width>0</width>
-                      <height>65</height>
-                     </size>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">QPushButton{
+                     </property>
+                     <property name="text">
+                      <string>Get Image Directory</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="output_dir_button">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>65</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QPushButton{
 	border: none;
 	background-color: rgb(33,33, 40);
 	color:white;
@@ -492,112 +505,112 @@ QPushButton:hover{
 QPushButton:pressed{
 	background-color: rgb(47, 48, 60);
 }</string>
-                    </property>
-                    <property name="text">
-                     <string>Set Output Directory</string>
-                    </property>
-                   </widget>
-                  </item>
-                 </layout>
-                </widget>
-               </item>
-              </layout>
-             </widget>
-             <widget class="QWidget" name="mask_page">
-              <layout class="QVBoxLayout" name="verticalLayout_5" stretch="1,0">
-               <property name="spacing">
-                <number>0</number>
-               </property>
-               <property name="leftMargin">
-                <number>0</number>
-               </property>
-               <property name="topMargin">
-                <number>0</number>
-               </property>
-               <property name="rightMargin">
-                <number>0</number>
-               </property>
-               <property name="bottomMargin">
-                <number>0</number>
-               </property>
-               <item>
-                <widget class="QLabel" name="mask_title">
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>90</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>16777215</width>
-                   <height>90</height>
-                  </size>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <pointsize>20</pointsize>
-                  </font>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">QLabel{
+                     </property>
+                     <property name="text">
+                      <string>Set Output Directory</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+              <widget class="QWidget" name="mask_page">
+               <layout class="QVBoxLayout" name="verticalLayout_5" stretch="1,0">
+                <property name="spacing">
+                 <number>0</number>
+                </property>
+                <property name="leftMargin">
+                 <number>0</number>
+                </property>
+                <property name="topMargin">
+                 <number>0</number>
+                </property>
+                <property name="rightMargin">
+                 <number>0</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
+                <item>
+                 <widget class="QLabel" name="mask_title">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>90</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>16777215</width>
+                    <height>90</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <pointsize>20</pointsize>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QLabel{
 	color: white;
 }</string>
-                 </property>
-                 <property name="text">
-                  <string>Mask Settings</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item alignment="Qt::AlignTop">
-                <widget class="QWidget" name="widget_3" native="true">
-                 <property name="maximumSize">
-                  <size>
-                   <width>16777215</width>
-                   <height>800</height>
-                  </size>
-                 </property>
-                 <property name="layoutDirection">
-                  <enum>Qt::LeftToRight</enum>
-                 </property>
-                 <layout class="QHBoxLayout" name="horizontalLayout_2">
-                  <property name="spacing">
-                   <number>-1</number>
                   </property>
-                  <property name="leftMargin">
-                   <number>0</number>
+                  <property name="text">
+                   <string>Mask Settings</string>
                   </property>
-                  <property name="topMargin">
-                   <number>0</number>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
                   </property>
-                  <property name="rightMargin">
-                   <number>0</number>
+                 </widget>
+                </item>
+                <item alignment="Qt::AlignTop">
+                 <widget class="QWidget" name="mask_settings_container" native="true">
+                  <property name="maximumSize">
+                   <size>
+                    <width>16777215</width>
+                    <height>800</height>
+                   </size>
                   </property>
-                  <property name="bottomMargin">
-                   <number>20</number>
+                  <property name="layoutDirection">
+                   <enum>Qt::LeftToRight</enum>
                   </property>
-                  <item>
-                   <widget class="QWidget" name="widget_5" native="true">
-                    <layout class="QVBoxLayout" name="verticalLayout_8">
-                     <property name="spacing">
-                      <number>25</number>
-                     </property>
-                     <property name="topMargin">
-                      <number>0</number>
-                     </property>
-                     <item>
-                      <widget class="QPushButton" name="change_pen_button">
-                       <property name="minimumSize">
-                        <size>
-                         <width>0</width>
-                         <height>40</height>
-                        </size>
-                       </property>
-                       <property name="styleSheet">
-                        <string notr="true">QPushButton{
+                  <layout class="QHBoxLayout" name="horizontalLayout_2">
+                   <property name="spacing">
+                    <number>-1</number>
+                   </property>
+                   <property name="leftMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="topMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>20</number>
+                   </property>
+                   <item>
+                    <widget class="QWidget" name="mask_buttons_container" native="true">
+                     <layout class="QVBoxLayout" name="verticalLayout_8">
+                      <property name="spacing">
+                       <number>25</number>
+                      </property>
+                      <property name="topMargin">
+                       <number>0</number>
+                      </property>
+                      <item>
+                       <widget class="QPushButton" name="change_pen_button">
+                        <property name="minimumSize">
+                         <size>
+                          <width>0</width>
+                          <height>40</height>
+                         </size>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">QPushButton{
 	border: none;
 	background-color: rgb(33,33, 40);
 	color:white;
@@ -609,22 +622,22 @@ QPushButton:hover{
 QPushButton:pressed{
 	background-color: rgb(47, 48, 60);
 }</string>
-                       </property>
-                       <property name="text">
-                        <string>Change Pen</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QPushButton" name="color_button">
-                       <property name="minimumSize">
-                        <size>
-                         <width>0</width>
-                         <height>40</height>
-                        </size>
-                       </property>
-                       <property name="styleSheet">
-                        <string notr="true">QPushButton{
+                        </property>
+                        <property name="text">
+                         <string>Change Pen</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QPushButton" name="color_button">
+                        <property name="minimumSize">
+                         <size>
+                          <width>0</width>
+                          <height>40</height>
+                         </size>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">QPushButton{
 	border: none;
 	background-color: rgb(33,33, 40);
 	color:white;
@@ -636,22 +649,22 @@ QPushButton:hover{
 QPushButton:pressed{
 	background-color: rgb(47, 48, 60);
 }</string>
-                       </property>
-                       <property name="text">
-                        <string>Change Pen Color</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QPushButton" name="dialate_button">
-                       <property name="minimumSize">
-                        <size>
-                         <width>0</width>
-                         <height>40</height>
-                        </size>
-                       </property>
-                       <property name="styleSheet">
-                        <string notr="true">QPushButton{
+                        </property>
+                        <property name="text">
+                         <string>Change Pen Color</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QPushButton" name="dialate_button">
+                        <property name="minimumSize">
+                         <size>
+                          <width>0</width>
+                          <height>40</height>
+                         </size>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">QPushButton{
 	border: none;
 	background-color: rgb(33,33, 40);
 	color:white;
@@ -663,22 +676,22 @@ QPushButton:hover{
 QPushButton:pressed{
 	background-color: rgb(47, 48, 60);
 }</string>
-                       </property>
-                       <property name="text">
-                        <string>Dialate Mask</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QPushButton" name="erode_button">
-                       <property name="minimumSize">
-                        <size>
-                         <width>0</width>
-                         <height>40</height>
-                        </size>
-                       </property>
-                       <property name="styleSheet">
-                        <string notr="true">QPushButton{
+                        </property>
+                        <property name="text">
+                         <string>Dialate Mask</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QPushButton" name="erode_button">
+                        <property name="minimumSize">
+                         <size>
+                          <width>0</width>
+                          <height>40</height>
+                         </size>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">QPushButton{
 	border: none;
 	background-color: rgb(33,33, 40);
 	color:white;
@@ -690,22 +703,22 @@ QPushButton:hover{
 QPushButton:pressed{
 	background-color: rgb(47, 48, 60);
 }</string>
-                       </property>
-                       <property name="text">
-                        <string>Erode Mask</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QPushButton" name="resolve_frame_button">
-                       <property name="minimumSize">
-                        <size>
-                         <width>0</width>
-                         <height>40</height>
-                        </size>
-                       </property>
-                       <property name="styleSheet">
-                        <string notr="true">QPushButton{
+                        </property>
+                        <property name="text">
+                         <string>Erode Mask</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QPushButton" name="resolve_frame_button">
+                        <property name="minimumSize">
+                         <size>
+                          <width>0</width>
+                          <height>40</height>
+                         </size>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">QPushButton{
 	border: none;
 	background-color: rgb(33,33, 40);
 	color:white;
@@ -717,22 +730,22 @@ QPushButton:hover{
 QPushButton:pressed{
 	background-color: rgb(47, 48, 60);
 }</string>
-                       </property>
-                       <property name="text">
-                        <string>Recalculate Current</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QPushButton" name="clear_changes_button">
-                       <property name="minimumSize">
-                        <size>
-                         <width>0</width>
-                         <height>40</height>
-                        </size>
-                       </property>
-                       <property name="styleSheet">
-                        <string notr="true">QPushButton{
+                        </property>
+                        <property name="text">
+                         <string>Recalculate Current</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QPushButton" name="clear_changes_button">
+                        <property name="minimumSize">
+                         <size>
+                          <width>0</width>
+                          <height>40</height>
+                         </size>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">QPushButton{
 	border: none;
 	background-color: rgb(33,33, 40);
 	color:white;
@@ -744,22 +757,22 @@ QPushButton:hover{
 QPushButton:pressed{
 	background-color: rgb(47, 48, 60);
 }</string>
-                       </property>
-                       <property name="text">
-                        <string>Clear Changes</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QPushButton" name="save_current_button">
-                       <property name="minimumSize">
-                        <size>
-                         <width>0</width>
-                         <height>40</height>
-                        </size>
-                       </property>
-                       <property name="styleSheet">
-                        <string notr="true">QPushButton{
+                        </property>
+                        <property name="text">
+                         <string>Clear Changes</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QPushButton" name="save_current_button">
+                        <property name="minimumSize">
+                         <size>
+                          <width>0</width>
+                          <height>40</height>
+                         </size>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">QPushButton{
 	border: none;
 	background-color: rgb(33,33, 40);
 	color:white;
@@ -771,90 +784,90 @@ QPushButton:hover{
 QPushButton:pressed{
 	background-color: rgb(47, 48, 60);
 }</string>
-                       </property>
-                       <property name="text">
-                        <string>Save Current</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item alignment="Qt::AlignTop">
-                      <widget class="QWidget" name="widget_6" native="true">
-                       <layout class="QGridLayout" name="gridLayout">
-                        <item row="0" column="0">
-                         <widget class="QWidget" name="primarr_color_widget" native="true">
-                          <property name="minimumSize">
-                           <size>
-                            <width>80</width>
-                            <height>80</height>
-                           </size>
-                          </property>
-                          <property name="maximumSize">
-                           <size>
-                            <width>80</width>
-                            <height>80</height>
-                           </size>
-                          </property>
-                          <property name="styleSheet">
-                           <string notr="true">QWidget{
+                        </property>
+                        <property name="text">
+                         <string>Save Current</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item alignment="Qt::AlignTop">
+                       <widget class="QWidget" name="color_indicator_container" native="true">
+                        <layout class="QGridLayout" name="gridLayout">
+                         <item row="0" column="0">
+                          <widget class="QWidget" name="primary_color_widget" native="true">
+                           <property name="minimumSize">
+                            <size>
+                             <width>80</width>
+                             <height>80</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>80</width>
+                             <height>80</height>
+                            </size>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">QWidget{
 	border: 5px solid rgb(57, 58, 73);
 	border-radius: 40px;
 }</string>
-                          </property>
-                         </widget>
-                        </item>
-                        <item row="0" column="1">
-                         <widget class="QWidget" name="secondary_color_widget" native="true">
-                          <property name="minimumSize">
-                           <size>
-                            <width>40</width>
-                            <height>40</height>
-                           </size>
-                          </property>
-                          <property name="maximumSize">
-                           <size>
-                            <width>40</width>
-                            <height>40</height>
-                           </size>
-                          </property>
-                          <property name="styleSheet">
-                           <string notr="true">QWidget{
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="0" column="1">
+                          <widget class="QWidget" name="secondary_color_widget" native="true">
+                           <property name="minimumSize">
+                            <size>
+                             <width>40</width>
+                             <height>40</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>40</width>
+                             <height>40</height>
+                            </size>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">QWidget{
 	border: 5px solid rgb(57, 58, 73);
 	border-radius: 20px;
 }</string>
-                          </property>
-                         </widget>
-                        </item>
-                       </layout>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QSlider" name="verticalSlider">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="minimumSize">
-                     <size>
-                      <width>10</width>
-                      <height>0</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>10</width>
-                      <height>16777215</height>
-                     </size>
-                    </property>
-                    <property name="toolTip">
-                     <string>Change view opacity.  This will not affect the final output.</string>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">QSlider::handle:vertical{
+                           </property>
+                          </widget>
+                         </item>
+                        </layout>
+                       </widget>
+                      </item>
+                     </layout>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QSlider" name="verticalSlider">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>10</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>10</width>
+                       <height>16777215</height>
+                      </size>
+                     </property>
+                     <property name="toolTip">
+                      <string>Change view opacity.  This will not affect the final output.</string>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QSlider::handle:vertical{
 	border-radius: 5px;
 	background-color: rgb(50, 51, 64);
 }
@@ -870,175 +883,151 @@ QSlider::sub-page:vertical{
 	background-color: rgb(12, 12, 16);
 	border-radius: 5px;
 }</string>
-                    </property>
-                    <property name="maximum">
-                     <number>100</number>
-                    </property>
-                    <property name="value">
-                     <number>100</number>
-                    </property>
-                    <property name="orientation">
-                     <enum>Qt::Vertical</enum>
-                    </property>
-                    <property name="invertedAppearance">
-                     <bool>false</bool>
-                    </property>
-                    <property name="invertedControls">
-                     <bool>false</bool>
-                    </property>
-                    <property name="tickPosition">
-                     <enum>QSlider::NoTicks</enum>
-                    </property>
-                   </widget>
-                  </item>
-                 </layout>
-                </widget>
-               </item>
-              </layout>
-             </widget>
-             <widget class="QWidget" name="clip_page">
-              <layout class="QVBoxLayout" name="verticalLayout_6" stretch="1,6">
-               <property name="spacing">
-                <number>0</number>
-               </property>
-               <property name="leftMargin">
-                <number>0</number>
-               </property>
-               <property name="topMargin">
-                <number>0</number>
-               </property>
-               <property name="rightMargin">
-                <number>0</number>
-               </property>
-               <property name="bottomMargin">
-                <number>0</number>
-               </property>
-               <item>
-                <widget class="QLabel" name="file_title_2">
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>90</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>16777215</width>
-                   <height>90</height>
-                  </size>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <pointsize>20</pointsize>
-                  </font>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">QLabel{
+                     </property>
+                     <property name="maximum">
+                      <number>100</number>
+                     </property>
+                     <property name="value">
+                      <number>100</number>
+                     </property>
+                     <property name="orientation">
+                      <enum>Qt::Vertical</enum>
+                     </property>
+                     <property name="invertedAppearance">
+                      <bool>false</bool>
+                     </property>
+                     <property name="invertedControls">
+                      <bool>false</bool>
+                     </property>
+                     <property name="tickPosition">
+                      <enum>QSlider::NoTicks</enum>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+              <widget class="QWidget" name="clip_page">
+               <layout class="QVBoxLayout" name="verticalLayout_6" stretch="1,0">
+                <property name="spacing">
+                 <number>0</number>
+                </property>
+                <property name="leftMargin">
+                 <number>0</number>
+                </property>
+                <property name="topMargin">
+                 <number>0</number>
+                </property>
+                <property name="rightMargin">
+                 <number>0</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
+                <item>
+                 <widget class="QLabel" name="clip_title">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>90</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>16777215</width>
+                    <height>90</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <pointsize>20</pointsize>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QLabel{
 	color: white;
 }</string>
-                 </property>
-                 <property name="text">
-                  <string>Clip Information</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QWidget" name="widget_4" native="true">
-                 <layout class="QVBoxLayout" name="verticalLayout_9">
-                  <property name="spacing">
-                   <number>0</number>
                   </property>
-                  <property name="leftMargin">
-                   <number>0</number>
+                  <property name="text">
+                   <string>Clip Information</string>
                   </property>
-                  <property name="topMargin">
-                   <number>0</number>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
                   </property>
-                  <property name="rightMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="bottomMargin">
-                   <number>0</number>
-                  </property>
-                  <item alignment="Qt::AlignTop">
-                   <widget class="QWidget" name="widget_9" native="true">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <layout class="QVBoxLayout" name="verticalLayout_10">
-                     <property name="spacing">
-                      <number>30</number>
+                 </widget>
+                </item>
+                <item alignment="Qt::AlignTop">
+                 <widget class="QWidget" name="clip_information_container" native="true">
+                  <layout class="QVBoxLayout" name="verticalLayout_9">
+                   <property name="spacing">
+                    <number>0</number>
+                   </property>
+                   <property name="leftMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="topMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>0</number>
+                   </property>
+                   <item>
+                    <widget class="QWidget" name="clip_operations_container" native="true">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                       <horstretch>10</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
                      </property>
-                     <property name="leftMargin">
-                      <number>0</number>
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>350</height>
+                      </size>
                      </property>
-                     <property name="topMargin">
-                      <number>0</number>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>500</height>
+                      </size>
                      </property>
-                     <property name="rightMargin">
-                      <number>0</number>
+                     <property name="layoutDirection">
+                      <enum>Qt::LeftToRight</enum>
                      </property>
-                     <property name="bottomMargin">
-                      <number>0</number>
+                     <property name="styleSheet">
+                      <string notr="true"/>
                      </property>
-                     <item>
-                      <widget class="QWidget" name="widget_7" native="true">
-                       <property name="sizePolicy">
-                        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                         <horstretch>10</horstretch>
-                         <verstretch>0</verstretch>
-                        </sizepolicy>
-                       </property>
-                       <property name="minimumSize">
-                        <size>
-                         <width>0</width>
-                         <height>350</height>
-                        </size>
-                       </property>
-                       <property name="maximumSize">
-                        <size>
-                         <width>16777215</width>
-                         <height>500</height>
-                        </size>
-                       </property>
-                       <property name="layoutDirection">
-                        <enum>Qt::LeftToRight</enum>
-                       </property>
-                       <property name="styleSheet">
-                        <string notr="true"/>
-                       </property>
-                       <layout class="QVBoxLayout" name="verticalLayout_12">
-                        <property name="spacing">
-                         <number>30</number>
+                     <layout class="QVBoxLayout" name="verticalLayout_12">
+                      <property name="spacing">
+                       <number>30</number>
+                      </property>
+                      <property name="leftMargin">
+                       <number>12</number>
+                      </property>
+                      <property name="topMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="rightMargin">
+                       <number>12</number>
+                      </property>
+                      <property name="bottomMargin">
+                       <number>10</number>
+                      </property>
+                      <item>
+                       <widget class="QPushButton" name="generate_masks_button">
+                        <property name="minimumSize">
+                         <size>
+                          <width>0</width>
+                          <height>65</height>
+                         </size>
                         </property>
-                        <property name="leftMargin">
-                         <number>12</number>
-                        </property>
-                        <property name="topMargin">
-                         <number>0</number>
-                        </property>
-                        <property name="rightMargin">
-                         <number>12</number>
-                        </property>
-                        <property name="bottomMargin">
-                         <number>10</number>
-                        </property>
-                        <item>
-                         <widget class="QPushButton" name="generate_masks_button">
-                          <property name="minimumSize">
-                           <size>
-                            <width>0</width>
-                            <height>65</height>
-                           </size>
-                          </property>
-                          <property name="styleSheet">
-                           <string notr="true">QPushButton{
+                        <property name="styleSheet">
+                         <string notr="true">QPushButton{
 	border: none;
 	background-color: rgb(33,33, 40);
 	color:white;
@@ -1050,22 +1039,22 @@ QPushButton:hover{
 QPushButton:pressed{
 	background-color: rgb(47, 48, 60);
 }</string>
-                          </property>
-                          <property name="text">
-                           <string>Generate Clip Masks</string>
-                          </property>
-                         </widget>
-                        </item>
-                        <item>
-                         <widget class="QPushButton" name="view_clip_details_button">
-                          <property name="minimumSize">
-                           <size>
-                            <width>0</width>
-                            <height>65</height>
-                           </size>
-                          </property>
-                          <property name="styleSheet">
-                           <string notr="true">QPushButton{
+                        </property>
+                        <property name="text">
+                         <string>Generate Clip Masks</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QPushButton" name="view_clip_details_button">
+                        <property name="minimumSize">
+                         <size>
+                          <width>0</width>
+                          <height>65</height>
+                         </size>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">QPushButton{
 	border: none;
 	background-color: rgb(33,33, 40);
 	color:white;
@@ -1077,22 +1066,22 @@ QPushButton:hover{
 QPushButton:pressed{
 	background-color: rgb(47, 48, 60);
 }</string>
-                          </property>
-                          <property name="text">
-                           <string>View Clip Details</string>
-                          </property>
-                         </widget>
-                        </item>
-                        <item>
-                         <widget class="QPushButton" name="set_iterations_button">
-                          <property name="minimumSize">
-                           <size>
-                            <width>0</width>
-                            <height>65</height>
-                           </size>
-                          </property>
-                          <property name="styleSheet">
-                           <string notr="true">QPushButton{
+                        </property>
+                        <property name="text">
+                         <string>View Clip Details</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QPushButton" name="set_iterations_button">
+                        <property name="minimumSize">
+                         <size>
+                          <width>0</width>
+                          <height>65</height>
+                         </size>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">QPushButton{
 	border: none;
 	background-color: rgb(33,33, 40);
 	color:white;
@@ -1104,202 +1093,230 @@ QPushButton:hover{
 QPushButton:pressed{
 	background-color: rgb(47, 48, 60);
 }</string>
-                          </property>
-                          <property name="text">
-                           <string>Set Crabcut Iterations</string>
-                          </property>
-                         </widget>
-                        </item>
-                        <item>
-                         <widget class="QWidget" name="widget_10" native="true">
-                          <layout class="QHBoxLayout" name="horizontalLayout_3">
-                           <item>
-                            <widget class="QWidget" name="widget_8" native="true">
-                             <property name="minimumSize">
-                              <size>
-                               <width>170</width>
-                               <height>170</height>
-                              </size>
-                             </property>
-                             <property name="maximumSize">
-                              <size>
-                               <width>150</width>
-                               <height>150</height>
-                              </size>
-                             </property>
-                             <property name="styleSheet">
-                              <string notr="true">QWidget{
+                        </property>
+                        <property name="text">
+                         <string>Set Crabcut Iterations</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QWidget" name="generation_status_container" native="true">
+                        <layout class="QHBoxLayout" name="horizontalLayout_3">
+                         <item>
+                          <widget class="QWidget" name="generation_background" native="true">
+                           <property name="minimumSize">
+                            <size>
+                             <width>170</width>
+                             <height>170</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>150</width>
+                             <height>150</height>
+                            </size>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">QWidget{
 	background-color: rgb(33,33, 40);
 	border-radius: 85px;
 }</string>
-                             </property>
-                             <layout class="QVBoxLayout" name="verticalLayout_11">
-                              <property name="spacing">
-                               <number>0</number>
+                           </property>
+                           <layout class="QVBoxLayout" name="verticalLayout_11">
+                            <property name="spacing">
+                             <number>0</number>
+                            </property>
+                            <item>
+                             <widget class="QDoubleSpinBox" name="generation_status">
+                              <property name="minimumSize">
+                               <size>
+                                <width>0</width>
+                                <height>0</height>
+                               </size>
                               </property>
-                              <item>
-                               <widget class="QDoubleSpinBox" name="doubleSpinBox">
-                                <property name="minimumSize">
-                                 <size>
-                                  <width>0</width>
-                                  <height>0</height>
-                                 </size>
-                                </property>
-                                <property name="maximumSize">
-                                 <size>
-                                  <width>16777215</width>
-                                  <height>40</height>
-                                 </size>
-                                </property>
-                                <property name="font">
-                                 <font>
-                                  <pointsize>40</pointsize>
-                                 </font>
-                                </property>
-                                <property name="focusPolicy">
-                                 <enum>Qt::NoFocus</enum>
-                                </property>
-                                <property name="layoutDirection">
-                                 <enum>Qt::RightToLeft</enum>
-                                </property>
-                                <property name="styleSheet">
-                                 <string notr="true">QDoubleSpinBox{
+                              <property name="maximumSize">
+                               <size>
+                                <width>16777215</width>
+                                <height>40</height>
+                               </size>
+                              </property>
+                              <property name="font">
+                               <font>
+                                <pointsize>40</pointsize>
+                               </font>
+                              </property>
+                              <property name="focusPolicy">
+                               <enum>Qt::NoFocus</enum>
+                              </property>
+                              <property name="layoutDirection">
+                               <enum>Qt::RightToLeft</enum>
+                              </property>
+                              <property name="styleSheet">
+                               <string notr="true">QDoubleSpinBox{
 	color: white;
 }</string>
-                                </property>
-                                <property name="alignment">
-                                 <set>Qt::AlignCenter</set>
-                                </property>
-                                <property name="buttonSymbols">
-                                 <enum>QAbstractSpinBox::NoButtons</enum>
-                                </property>
-                                <property name="suffix">
-                                 <string>%</string>
-                                </property>
-                                <property name="maximum">
-                                 <double>100.000000000000000</double>
-                                </property>
-                                <property name="value">
-                                 <double>0.000000000000000</double>
-                                </property>
-                               </widget>
-                              </item>
-                              <item alignment="Qt::AlignHCenter">
-                               <widget class="QLabel" name="label">
-                                <property name="maximumSize">
-                                 <size>
-                                  <width>140</width>
-                                  <height>20</height>
-                                 </size>
-                                </property>
-                                <property name="styleSheet">
-                                 <string notr="true">QLabel{
+                              </property>
+                              <property name="alignment">
+                               <set>Qt::AlignCenter</set>
+                              </property>
+                              <property name="buttonSymbols">
+                               <enum>QAbstractSpinBox::NoButtons</enum>
+                              </property>
+                              <property name="suffix">
+                               <string>%</string>
+                              </property>
+                              <property name="maximum">
+                               <double>100.000000000000000</double>
+                              </property>
+                              <property name="value">
+                               <double>0.000000000000000</double>
+                              </property>
+                             </widget>
+                            </item>
+                            <item alignment="Qt::AlignHCenter">
+                             <widget class="QLabel" name="generation_status_label">
+                              <property name="maximumSize">
+                               <size>
+                                <width>140</width>
+                                <height>20</height>
+                               </size>
+                              </property>
+                              <property name="styleSheet">
+                               <string notr="true">QLabel{
 	color: white;
 }</string>
-                                </property>
-                                <property name="text">
-                                 <string>Generation Progress</string>
-                                </property>
-                                <property name="alignment">
-                                 <set>Qt::AlignCenter</set>
-                                </property>
-                               </widget>
-                              </item>
-                             </layout>
-                            </widget>
-                           </item>
-                          </layout>
-                         </widget>
-                        </item>
-                       </layout>
-                       <zorder>widget_10</zorder>
-                       <zorder>generate_masks_button</zorder>
-                       <zorder>view_clip_details_button</zorder>
-                       <zorder>set_iterations_button</zorder>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                  </item>
-                 </layout>
-                </widget>
-               </item>
-              </layout>
+                              </property>
+                              <property name="text">
+                               <string>Generation Progress</string>
+                              </property>
+                              <property name="alignment">
+                               <set>Qt::AlignCenter</set>
+                              </property>
+                             </widget>
+                            </item>
+                           </layout>
+                          </widget>
+                         </item>
+                        </layout>
+                       </widget>
+                      </item>
+                     </layout>
+                     <zorder>generation_status_container</zorder>
+                     <zorder>generate_masks_button</zorder>
+                     <zorder>view_clip_details_button</zorder>
+                     <zorder>set_iterations_button</zorder>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
              </widget>
-            </widget>
-           </item>
-          </layout>
+            </item>
+           </layout>
+          </widget>
          </widget>
-        </widget>
-       </item>
-       <item>
-        <widget class="QWidget" name="vertica_divider" native="true">
-         <property name="minimumSize">
-          <size>
-           <width>3</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>3</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="cursor">
-          <cursorShape>SizeHorCursor</cursorShape>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QWidget{
+         <widget class="QWidget" name="workspace" native="true">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_6">
+           <property name="spacing">
+            <number>35</number>
+           </property>
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QWidget" name="vertical_divider_workspace" native="true">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>3</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>3</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="cursor">
+              <cursorShape>ArrowCursor</cursorShape>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QWidget{
 	background-color: rgb(33,33, 40);
 	border-radius: 1px;
 }</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QWidget" name="image_widget" native="true">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>0</height>
-          </size>
-         </property>
-         <layout class="QVBoxLayout" name="verticalLayout_13">
-          <property name="spacing">
-           <number>0</number>
-          </property>
-          <property name="leftMargin">
-           <number>0</number>
-          </property>
-          <property name="rightMargin">
-           <number>0</number>
-          </property>
-          <item>
-           <widget class="QWidget" name="widget_11" native="true"/>
-          </item>
-          <item>
-           <widget class="QWidget" name="widget_12" native="true">
-            <property name="maximumSize">
-             <size>
-              <width>16777215</width>
-              <height>50</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true"/>
-            </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_5">
-             <item>
-              <widget class="QPushButton" name="previous_frame_button">
-               <property name="minimumSize">
-                <size>
-                 <width>40</width>
-                 <height>30</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">QPushButton{
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QWidget" name="mask_operations_container" native="true">
+             <layout class="QVBoxLayout" name="verticalLayout_14">
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QWidget" name="paint_interface_container" native="true"/>
+              </item>
+              <item>
+               <widget class="QWidget" name="frame_operations_container" native="true">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>50</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true"/>
+                </property>
+                <layout class="QHBoxLayout" name="horizontalLayout_5">
+                 <item>
+                  <widget class="QPushButton" name="previous_frame_button">
+                   <property name="minimumSize">
+                    <size>
+                     <width>40</width>
+                     <height>30</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton{
 	border: none;
 	background-color: rgb(33,33, 40);
 	color:white;
@@ -1311,28 +1328,28 @@ QPushButton:hover{
 QPushButton:pressed{
 	background-color: rgb(47, 48, 60);
 }</string>
-               </property>
-               <property name="text">
-                <string>&lt;&lt;</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QSlider" name="frame_slider">
-               <property name="minimumSize">
-                <size>
-                 <width>80</width>
-                 <height>0</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>16777215</width>
-                 <height>15</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">QSlider::handle:horizontal{
+                   </property>
+                   <property name="text">
+                    <string>&lt;&lt;</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QSlider" name="frame_slider">
+                   <property name="minimumSize">
+                    <size>
+                     <width>80</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>15</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QSlider::handle:horizontal{
 	border-radius: 5px;
 	background-color: rgb(50, 51, 64);
 }
@@ -1348,22 +1365,22 @@ QSlider::sub-page:horizontal{
 	background-color: rgb(35, 35, 44);
 	border-radius: 5px;
 }</string>
-               </property>
-               <property name="orientation">
-                <enum>Qt::Horizontal</enum>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QPushButton" name="next_frame_button">
-               <property name="minimumSize">
-                <size>
-                 <width>40</width>
-                 <height>30</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">QPushButton{
+                   </property>
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="next_frame_button">
+                   <property name="minimumSize">
+                    <size>
+                     <width>40</width>
+                     <height>30</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton{
 	border: none;
 	background-color: rgb(33,33, 40);
 	color:white;
@@ -1375,24 +1392,26 @@ QPushButton:hover{
 QPushButton:pressed{
 	background-color: rgb(47, 48, 60);
 }</string>
-               </property>
-               <property name="text">
-                <string>&gt;&gt;</string>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </widget>
-          </item>
-         </layout>
+                   </property>
+                   <property name="text">
+                    <string>&gt;&gt;</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
         </widget>
        </item>
       </layout>
+      <zorder>splitter</zorder>
       <zorder>side_menu</zorder>
-      <zorder>image_widget</zorder>
-      <zorder>vertica_divider</zorder>
-      <zorder>vertica_divider_2</zorder>
-      <zorder>scrollArea</zorder>
+      <zorder>vertical_divider_side_menu</zorder>
      </widget>
     </item>
    </layout>
