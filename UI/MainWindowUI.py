@@ -12,7 +12,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(905, 668)
+        MainWindow.resize(887, 701)
         MainWindow.setFocusPolicy(QtCore.Qt.FocusPolicy.StrongFocus)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setMinimumSize(QtCore.QSize(0, 0))
@@ -117,7 +117,7 @@ class Ui_MainWindow(object):
         self.vertica_divider_2.setObjectName("vertica_divider_2")
         self.horizontalLayout.addWidget(self.vertica_divider_2)
         self.scrollArea = QtWidgets.QScrollArea(self.widget)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Minimum)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.scrollArea.sizePolicy().hasHeightForWidth())
@@ -132,7 +132,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setObjectName("scrollArea")
         self.scrollAreaWidgetContents = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 218, 628))
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(-15, 0, 218, 681))
         self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
         self.horizontalLayout_4 = QtWidgets.QHBoxLayout(self.scrollAreaWidgetContents)
         self.horizontalLayout_4.setContentsMargins(0, 0, 0, 0)
@@ -255,10 +255,10 @@ class Ui_MainWindow(object):
         self.widget_5.setObjectName("widget_5")
         self.verticalLayout_8 = QtWidgets.QVBoxLayout(self.widget_5)
         self.verticalLayout_8.setContentsMargins(-1, 0, -1, -1)
-        self.verticalLayout_8.setSpacing(30)
+        self.verticalLayout_8.setSpacing(25)
         self.verticalLayout_8.setObjectName("verticalLayout_8")
         self.change_pen_button = QtWidgets.QPushButton(self.widget_5)
-        self.change_pen_button.setMinimumSize(QtCore.QSize(0, 65))
+        self.change_pen_button.setMinimumSize(QtCore.QSize(0, 40))
         self.change_pen_button.setStyleSheet("QPushButton{\n"
 "    border: none;\n"
 "    background-color: rgb(33,33, 40);\n"
@@ -274,7 +274,7 @@ class Ui_MainWindow(object):
         self.change_pen_button.setObjectName("change_pen_button")
         self.verticalLayout_8.addWidget(self.change_pen_button)
         self.color_button = QtWidgets.QPushButton(self.widget_5)
-        self.color_button.setMinimumSize(QtCore.QSize(0, 65))
+        self.color_button.setMinimumSize(QtCore.QSize(0, 40))
         self.color_button.setStyleSheet("QPushButton{\n"
 "    border: none;\n"
 "    background-color: rgb(33,33, 40);\n"
@@ -290,7 +290,7 @@ class Ui_MainWindow(object):
         self.color_button.setObjectName("color_button")
         self.verticalLayout_8.addWidget(self.color_button)
         self.dialate_button = QtWidgets.QPushButton(self.widget_5)
-        self.dialate_button.setMinimumSize(QtCore.QSize(0, 65))
+        self.dialate_button.setMinimumSize(QtCore.QSize(0, 40))
         self.dialate_button.setStyleSheet("QPushButton{\n"
 "    border: none;\n"
 "    background-color: rgb(33,33, 40);\n"
@@ -306,7 +306,7 @@ class Ui_MainWindow(object):
         self.dialate_button.setObjectName("dialate_button")
         self.verticalLayout_8.addWidget(self.dialate_button)
         self.erode_button = QtWidgets.QPushButton(self.widget_5)
-        self.erode_button.setMinimumSize(QtCore.QSize(0, 65))
+        self.erode_button.setMinimumSize(QtCore.QSize(0, 40))
         self.erode_button.setStyleSheet("QPushButton{\n"
 "    border: none;\n"
 "    background-color: rgb(33,33, 40);\n"
@@ -321,6 +321,54 @@ class Ui_MainWindow(object):
 "}")
         self.erode_button.setObjectName("erode_button")
         self.verticalLayout_8.addWidget(self.erode_button)
+        self.resolve_frame_button = QtWidgets.QPushButton(self.widget_5)
+        self.resolve_frame_button.setMinimumSize(QtCore.QSize(0, 40))
+        self.resolve_frame_button.setStyleSheet("QPushButton{\n"
+"    border: none;\n"
+"    background-color: rgb(33,33, 40);\n"
+"    color:white;\n"
+"    border-radius: 15px;\n"
+"}\n"
+"QPushButton:hover{\n"
+"    background-color: rgb(37, 37, 46);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"    background-color: rgb(47, 48, 60);\n"
+"}")
+        self.resolve_frame_button.setObjectName("resolve_frame_button")
+        self.verticalLayout_8.addWidget(self.resolve_frame_button)
+        self.clear_changes_button = QtWidgets.QPushButton(self.widget_5)
+        self.clear_changes_button.setMinimumSize(QtCore.QSize(0, 40))
+        self.clear_changes_button.setStyleSheet("QPushButton{\n"
+"    border: none;\n"
+"    background-color: rgb(33,33, 40);\n"
+"    color:white;\n"
+"    border-radius: 15px;\n"
+"}\n"
+"QPushButton:hover{\n"
+"    background-color: rgb(37, 37, 46);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"    background-color: rgb(47, 48, 60);\n"
+"}")
+        self.clear_changes_button.setObjectName("clear_changes_button")
+        self.verticalLayout_8.addWidget(self.clear_changes_button)
+        self.save_current_button = QtWidgets.QPushButton(self.widget_5)
+        self.save_current_button.setMinimumSize(QtCore.QSize(0, 40))
+        self.save_current_button.setStyleSheet("QPushButton{\n"
+"    border: none;\n"
+"    background-color: rgb(33,33, 40);\n"
+"    color:white;\n"
+"    border-radius: 15px;\n"
+"}\n"
+"QPushButton:hover{\n"
+"    background-color: rgb(37, 37, 46);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"    background-color: rgb(47, 48, 60);\n"
+"}")
+        self.save_current_button.setObjectName("save_current_button")
+        self.verticalLayout_8.addWidget(self.save_current_button)
         self.widget_6 = QtWidgets.QWidget(self.widget_5)
         self.widget_6.setObjectName("widget_6")
         self.gridLayout = QtWidgets.QGridLayout(self.widget_6)
@@ -462,6 +510,22 @@ class Ui_MainWindow(object):
 "}")
         self.view_clip_details_button.setObjectName("view_clip_details_button")
         self.verticalLayout_12.addWidget(self.view_clip_details_button)
+        self.set_iterations_button = QtWidgets.QPushButton(self.widget_7)
+        self.set_iterations_button.setMinimumSize(QtCore.QSize(0, 65))
+        self.set_iterations_button.setStyleSheet("QPushButton{\n"
+"    border: none;\n"
+"    background-color: rgb(33,33, 40);\n"
+"    color:white;\n"
+"    border-radius: 15px;\n"
+"}\n"
+"QPushButton:hover{\n"
+"    background-color: rgb(37, 37, 46);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"    background-color: rgb(47, 48, 60);\n"
+"}")
+        self.set_iterations_button.setObjectName("set_iterations_button")
+        self.verticalLayout_12.addWidget(self.set_iterations_button)
         self.widget_10 = QtWidgets.QWidget(self.widget_7)
         self.widget_10.setObjectName("widget_10")
         self.horizontalLayout_3 = QtWidgets.QHBoxLayout(self.widget_10)
@@ -507,6 +571,7 @@ class Ui_MainWindow(object):
         self.widget_10.raise_()
         self.generate_masks_button.raise_()
         self.view_clip_details_button.raise_()
+        self.set_iterations_button.raise_()
         self.verticalLayout_10.addWidget(self.widget_7)
         self.verticalLayout_9.addWidget(self.widget_9, 0, QtCore.Qt.Alignment.AlignTop)
         self.verticalLayout_6.addWidget(self.widget_4)
@@ -534,10 +599,6 @@ class Ui_MainWindow(object):
         self.verticalLayout_13.setObjectName("verticalLayout_13")
         self.widget_11 = QtWidgets.QWidget(self.image_widget)
         self.widget_11.setObjectName("widget_11")
-        self.verticalLayout_15 = QtWidgets.QVBoxLayout(self.widget_11)
-        self.verticalLayout_15.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_15.setSpacing(0)
-        self.verticalLayout_15.setObjectName("verticalLayout_15")
         self.verticalLayout_13.addWidget(self.widget_11)
         self.widget_12 = QtWidgets.QWidget(self.image_widget)
         self.widget_12.setMaximumSize(QtCore.QSize(16777215, 50))
@@ -610,7 +671,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -625,10 +686,14 @@ class Ui_MainWindow(object):
         self.color_button.setText(_translate("MainWindow", "Change Pen Color"))
         self.dialate_button.setText(_translate("MainWindow", "Dialate Mask"))
         self.erode_button.setText(_translate("MainWindow", "Erode Mask"))
+        self.resolve_frame_button.setText(_translate("MainWindow", "Recalculate Current"))
+        self.clear_changes_button.setText(_translate("MainWindow", "Clear Changes"))
+        self.save_current_button.setText(_translate("MainWindow", "Save Current"))
         self.verticalSlider.setToolTip(_translate("MainWindow", "Change view opacity.  This will not affect the final output."))
         self.file_title_2.setText(_translate("MainWindow", "Clip Information"))
         self.generate_masks_button.setText(_translate("MainWindow", "Generate Clip Masks"))
         self.view_clip_details_button.setText(_translate("MainWindow", "View Clip Details"))
+        self.set_iterations_button.setText(_translate("MainWindow", "Set Crabcut Iterations"))
         self.doubleSpinBox.setSuffix(_translate("MainWindow", "%"))
         self.label.setText(_translate("MainWindow", "Generation Progress"))
         self.previous_frame_button.setText(_translate("MainWindow", "<<"))
