@@ -138,7 +138,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setAlignment(QtCore.Qt.Alignment.AlignCenter)
         self.scrollArea.setObjectName("scrollArea")
         self.scrollAreaWidgetContents = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 387, 690))
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 372, 681))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -233,6 +233,22 @@ class Ui_MainWindow(object):
 "}")
         self.output_dir_button.setObjectName("output_dir_button")
         self.verticalLayout_7.addWidget(self.output_dir_button)
+        self.save_project_button = QtWidgets.QPushButton(self.file_button_container)
+        self.save_project_button.setMinimumSize(QtCore.QSize(0, 65))
+        self.save_project_button.setStyleSheet("QPushButton{\n"
+"    border: none;\n"
+"    background-color: rgb(33,33, 40);\n"
+"    color:white;\n"
+"    border-radius: 15px;\n"
+"}\n"
+"QPushButton:hover{\n"
+"    background-color: rgb(37, 37, 46);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"    background-color: rgb(47, 48, 60);\n"
+"}")
+        self.save_project_button.setObjectName("save_project_button")
+        self.verticalLayout_7.addWidget(self.save_project_button)
         self.verticalLayout_4.addWidget(self.file_button_container, 0, QtCore.Qt.Alignment.AlignTop)
         self.verticalLayout_4.setStretch(0, 1)
         self.verticalLayout_4.setStretch(1, 6)
@@ -682,9 +698,37 @@ class Ui_MainWindow(object):
         self.vertical_divider_side_menu.raise_()
         self.verticalLayout.addWidget(self.widget)
         MainWindow.setCentralWidget(self.centralwidget)
+        self.menuBar = QtWidgets.QMenuBar(MainWindow)
+        self.menuBar.setGeometry(QtCore.QRect(0, 0, 1000, 21))
+        self.menuBar.setFocusPolicy(QtCore.Qt.FocusPolicy.NoFocus)
+        self.menuBar.setStyleSheet("QMenuBar{\n"
+"    border: none;\n"
+"    background-color: rgb(33,33, 40);\n"
+"    color:white;\n"
+"    border-radius: 15px;\n"
+"}\n"
+"QMenuBar:item:hover{\n"
+"    background-color: rgb(37, 37, 46);\n"
+"}\n"
+"QMenuBar:item:pressed{\n"
+"    background-color: rgb(47, 48, 60);\n"
+"}")
+        self.menuBar.setNativeMenuBar(False)
+        self.menuBar.setObjectName("menuBar")
+        self.menuFile = QtWidgets.QMenu(self.menuBar)
+        self.menuFile.setStyleSheet("")
+        self.menuFile.setObjectName("menuFile")
+        self.menuEdit = QtWidgets.QMenu(self.menuBar)
+        self.menuEdit.setObjectName("menuEdit")
+        self.menuHelp = QtWidgets.QMenu(self.menuBar)
+        self.menuHelp.setObjectName("menuHelp")
+        MainWindow.setMenuBar(self.menuBar)
+        self.menuBar.addAction(self.menuFile.menuAction())
+        self.menuBar.addAction(self.menuEdit.menuAction())
+        self.menuBar.addAction(self.menuHelp.menuAction())
 
         self.retranslateUi(MainWindow)
-        self.stackedWidget.setCurrentIndex(2)
+        self.stackedWidget.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -694,6 +738,7 @@ class Ui_MainWindow(object):
         self.mask_dir_button.setText(_translate("MainWindow", "Get Mask Directory"))
         self.image_dir_button.setText(_translate("MainWindow", "Get Image Directory"))
         self.output_dir_button.setText(_translate("MainWindow", "Set Output Directory"))
+        self.save_project_button.setText(_translate("MainWindow", "Save Project File"))
         self.mask_title.setText(_translate("MainWindow", "Mask Settings"))
         self.change_pen_button.setText(_translate("MainWindow", "Change Pen"))
         self.color_button.setText(_translate("MainWindow", "Change Pen Color"))
@@ -711,3 +756,6 @@ class Ui_MainWindow(object):
         self.generation_status_label.setText(_translate("MainWindow", "Generation Progress"))
         self.previous_frame_button.setText(_translate("MainWindow", "<<"))
         self.next_frame_button.setText(_translate("MainWindow", ">>"))
+        self.menuFile.setTitle(_translate("MainWindow", "File"))
+        self.menuEdit.setTitle(_translate("MainWindow", "Edit"))
+        self.menuHelp.setTitle(_translate("MainWindow", "help"))
