@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file './UI/mainwindow.ui'
+# Form implementation generated from reading ui file './Assets/mainwindow.ui'
 #
 # Created by: PyQt6 UI code generator 6.0.3
 #
@@ -58,7 +58,7 @@ class Ui_MainWindow(object):
 "}")
         self.file_button.setText("")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("./UI/../Icons/settings.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon.addPixmap(QtGui.QPixmap("./Assets/Icons/settings.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.file_button.setIcon(icon)
         self.file_button.setIconSize(QtCore.QSize(45, 45))
         self.file_button.setObjectName("file_button")
@@ -78,7 +78,7 @@ class Ui_MainWindow(object):
 "}")
         self.mask_button.setText("")
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("./UI/../Icons/mask.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon1.addPixmap(QtGui.QPixmap("./Assets/Icons/mask.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.mask_button.setIcon(icon1)
         self.mask_button.setIconSize(QtCore.QSize(45, 45))
         self.mask_button.setObjectName("mask_button")
@@ -98,7 +98,7 @@ class Ui_MainWindow(object):
 "}")
         self.clip_button.setText("")
         icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap("./UI/../Icons/clip.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon2.addPixmap(QtGui.QPixmap("./Assets/Icons/clip.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.clip_button.setIcon(icon2)
         self.clip_button.setIconSize(QtCore.QSize(45, 45))
         self.clip_button.setObjectName("clip_button")

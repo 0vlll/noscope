@@ -127,7 +127,7 @@ QPushButton:pressed{
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>../Icons/settings.svg</normaloff>../Icons/settings.svg</iconset>
+                 <normaloff>Icons/settings.svg</normaloff>Icons/settings.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -163,7 +163,7 @@ QPushButton:pressed{
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>../Icons/mask.svg</normaloff>../Icons/mask.svg</iconset>
+                 <normaloff>Icons/mask.svg</normaloff>Icons/mask.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -199,7 +199,7 @@ QPushButton:pressed{
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>../Icons/clip.svg</normaloff>../Icons/clip.svg</iconset>
+                 <normaloff>Icons/clip.svg</normaloff>Icons/clip.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
