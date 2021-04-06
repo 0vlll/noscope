@@ -13,12 +13,6 @@ class MainWindow(qtw.QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
 
-        self._set_animation_properties()
-        self._set_interface_properties()
-        self._connect_side_menu_toggle_events()
-        self._set_project_properties()
-
-    def _set_animation_properties(self):
         self.animation = qtc.QPropertyAnimation()
         self.fade_animation = qtc.QPropertyAnimation()
         self.unfade_animation = qtc.QPropertyAnimation()
@@ -26,7 +20,7 @@ class MainWindow(qtw.QMainWindow):
         self.side_menu_swap_speed = 120
         self.easing_curve = qtc.QEasingCurve(qtc.QEasingCurve.Type.OutQuint)
 
-    def _set_interface_properties(self):
+    
         self.ui.splitter.setCollapsible(0, True)
         self.ui.splitter.setCollapsible(1, False)
         
@@ -37,15 +31,24 @@ class MainWindow(qtw.QMainWindow):
         
         self.ui.scrollArea.verticalScrollBar().setStyleSheet('QScrollBar {width:0px;}')
         self.ui.stackedWidget.setCurrentWidget(self.ui.file_page)
-
-    def _connect_side_menu_toggle_events(self):
+    
         self.ui.file_button.clicked.connect(self.file_information_toggle)
         self.ui.mask_button.clicked.connect(self.mask_settings_toggle)
         self.ui.clip_button.clicked.connect(self.clip_information_toggle)
-
-    def _set_project_properties(self):
-        self.active_project = None
+    
+        self.active_project = Project.Project()
         self.ui.save_project_button.clicked.connect(self.save_project)
+        self.ui.output_dir_button.clicked.connect(self.set_output_path)
+        self.ui.mask_dir_button.clicked.connect(self.set_mask_directory)
+        self.ui.image_dir_button.clicked.connect(self.set_clip_directory)
+        self.ui.action_open.triggered.connect(self.open_project)
+        self.ui.action_save_file.triggered.connect(self.save_project)
+        self.ui.action_save_as.triggered.connect(self.save_project_as)
+
+        self.update_settings()
+
+        self.ui.next_frame_button.clicked.connect(lambda: self.ui.frame_slider.setValue(self.ui.frame_slider.value()+1))
+        self.ui.previous_frame_button.clicked.connect(lambda: self.ui.frame_slider.setValue(self.ui.frame_slider.value()-1))
 
     ######################### Side Menu Toggle #########################
 
@@ -119,9 +122,50 @@ class MainWindow(qtw.QMainWindow):
 
     ######################### Project Operations #########################
 
+    def update_settings(self):
+        self.ui.frame_slider.setMaximum(self.active_project.get_frame_count())
+
     def save_project(self):
-        file_path = qtw.QFileDialog.getExistingDirectory(self)
-        self.active_project = Project.Project()
-        self.active_project.save_project(file_path)
-        
+        if self.active_project.get_project_path() == None:
+            file_path = qtw.QFileDialog.getSaveFileName(self, 'Save File', filter='JSON Files (*.json)')
+            if file_path[0] == '':
+                return
+            self.active_project.set_project_path(file_path[0])
+            self.active_project.save_project()
+        else:
+            self.active_project.save_project()
+        self.update_settings()
+
+    def save_project_as(self):
+        file_path = qtw.QFileDialog.getSaveFileName(self, 'Save File', filter='JSON Files (*.json)')
+        if file_path[0] == '':
+            return
+        self.active_project.set_project_path(file_path[0])
+        self.active_project.save_project()
+        self.update_settings()
+
+
+    def open_project(self):
+        if self.active_project.is_saved() == False:
+            print('not saved')
+            ######################### To Be Implemented #########################
+        file_path = qtw.QFileDialog.getOpenFileName(self, 'Open File', filter='JSON Files (*.json)')
+        if file_path[0] == '':
+            return
+        self.active_project = Project.Project()    
+        self.active_project.open_project(file_path[0])  
+        self.update_settings()
+
+    def set_output_path(self):
+        file_path = qtw.QFileDialog.getExistingDirectory(self, 'Set Output Directory')
+        self.active_project.set_output_path(file_path)
+
+    def set_mask_directory(self):
+        file_path = qtw.QFileDialog.getExistingDirectory(self, 'Set Mask Directory')
+        self.active_project.set_mask_path(file_path)
+
+    def set_clip_directory(self):
+        file_path = qtw.QFileDialog.getExistingDirectory(self, 'Set Clip Directory')
+        self.active_project.set_clip_path(file_path)
+
 

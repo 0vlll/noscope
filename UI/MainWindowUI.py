@@ -699,21 +699,10 @@ class Ui_MainWindow(object):
         self.verticalLayout.addWidget(self.widget)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menuBar = QtWidgets.QMenuBar(MainWindow)
-        self.menuBar.setGeometry(QtCore.QRect(0, 0, 1000, 21))
+        self.menuBar.setGeometry(QtCore.QRect(0, 0, 1000, 22))
         self.menuBar.setFocusPolicy(QtCore.Qt.FocusPolicy.NoFocus)
-        self.menuBar.setStyleSheet("QMenuBar{\n"
-"    border: none;\n"
-"    background-color: rgb(33,33, 40);\n"
-"    color:white;\n"
-"    border-radius: 15px;\n"
-"}\n"
-"QMenuBar:item:hover{\n"
-"    background-color: rgb(37, 37, 46);\n"
-"}\n"
-"QMenuBar:item:pressed{\n"
-"    background-color: rgb(47, 48, 60);\n"
-"}")
-        self.menuBar.setNativeMenuBar(False)
+        self.menuBar.setStyleSheet("")
+        self.menuBar.setNativeMenuBar(True)
         self.menuBar.setObjectName("menuBar")
         self.menuFile = QtWidgets.QMenu(self.menuBar)
         self.menuFile.setStyleSheet("")
@@ -723,6 +712,18 @@ class Ui_MainWindow(object):
         self.menuHelp = QtWidgets.QMenu(self.menuBar)
         self.menuHelp.setObjectName("menuHelp")
         MainWindow.setMenuBar(self.menuBar)
+        self.action_save_file = QtGui.QAction(MainWindow)
+        self.action_save_file.setObjectName("action_save_file")
+        self.action_open = QtGui.QAction(MainWindow)
+        self.action_open.setObjectName("action_open")
+        self.action_save_as = QtGui.QAction(MainWindow)
+        self.action_save_as.setObjectName("action_save_as")
+        self.action_manual = QtGui.QAction(MainWindow)
+        self.action_manual.setObjectName("action_manual")
+        self.menuFile.addAction(self.action_save_file)
+        self.menuFile.addAction(self.action_open)
+        self.menuFile.addAction(self.action_save_as)
+        self.menuHelp.addAction(self.action_manual)
         self.menuBar.addAction(self.menuFile.menuAction())
         self.menuBar.addAction(self.menuEdit.menuAction())
         self.menuBar.addAction(self.menuHelp.menuAction())
@@ -759,3 +760,10 @@ class Ui_MainWindow(object):
         self.menuFile.setTitle(_translate("MainWindow", "File"))
         self.menuEdit.setTitle(_translate("MainWindow", "Edit"))
         self.menuHelp.setTitle(_translate("MainWindow", "help"))
+        self.action_save_file.setText(_translate("MainWindow", "Save File"))
+        self.action_save_file.setShortcut(_translate("MainWindow", "Ctrl+S"))
+        self.action_open.setText(_translate("MainWindow", "Open..."))
+        self.action_open.setShortcut(_translate("MainWindow", "Ctrl+O"))
+        self.action_save_as.setText(_translate("MainWindow", "Save As..."))
+        self.action_save_as.setShortcut(_translate("MainWindow", "Ctrl+Shift+S"))
+        self.action_manual.setText(_translate("MainWindow", "Manual"))
