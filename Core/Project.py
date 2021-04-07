@@ -27,8 +27,6 @@ class Project():
 
         self._save_up_to_date = True
 
-        #print('saved')
-
     def open_project(self, path):
         file = open(path, 'r')
         data = json.load(file)
@@ -37,8 +35,6 @@ class Project():
         self._output_path = data['output_path']
         self._project_path = path
         self._save_up_to_date = True
-
-        #print('opened')
 
     def get_project_path(self):
         return self._project_path
@@ -72,7 +68,6 @@ class Project():
 
     def set_not_saved(self):
         self._save_up_to_date = False
-        #print('not saved')
 
     def set_frame_count(self, frames):
         ######################### Add Implementation for counting and setting #########################

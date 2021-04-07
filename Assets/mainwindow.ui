@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1000</width>
-    <height>754</height>
+    <width>999</width>
+    <height>766</height>
    </rect>
   </property>
   <property name="focusPolicy">
@@ -33,20 +33,35 @@
      <number>0</number>
     </property>
     <property name="leftMargin">
-     <number>20</number>
+     <number>0</number>
     </property>
     <property name="topMargin">
      <number>20</number>
     </property>
     <property name="rightMargin">
-     <number>20</number>
+     <number>0</number>
     </property>
     <property name="bottomMargin">
-     <number>20</number>
+     <number>0</number>
     </property>
     <item>
      <widget class="QWidget" name="widget" native="true">
       <layout class="QHBoxLayout" name="horizontalLayout">
+       <property name="spacing">
+        <number>20</number>
+       </property>
+       <property name="leftMargin">
+        <number>30</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>30</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
        <item>
         <widget class="QWidget" name="side_menu" native="true">
          <property name="minimumSize">
@@ -302,8 +317,8 @@ QPushButton:pressed{
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>372</width>
-             <height>681</height>
+             <width>379</width>
+             <height>694</height>
             </rect>
            </property>
            <property name="sizePolicy">
@@ -1441,6 +1456,63 @@ QPushButton:pressed{
       <zorder>vertical_divider_side_menu</zorder>
      </widget>
     </item>
+    <item>
+     <widget class="QWidget" name="info_bar" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QWidget{
+	background-color: rgb(33,33, 40);
+}
+</string>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_7">
+       <property name="leftMargin">
+        <number>30</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>30</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="info_label">
+         <property name="styleSheet">
+          <string notr="true">QLabel{
+	color: white;
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
    </layout>
   </widget>
   <widget class="QMenuBar" name="menuBar">
@@ -1448,7 +1520,7 @@ QPushButton:pressed{
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1000</width>
+     <width>999</width>
      <height>22</height>
     </rect>
    </property>

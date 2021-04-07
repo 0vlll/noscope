@@ -3,8 +3,8 @@ from PyQt6 import QtCore as qtc
 from PyQt6 import QtGui as qtg
 
 class ImageContainer(qtw.QLabel):
-    def __init__(self, parent):
-        super().__init__(parent=parent)
+    def __init__(self, parent = None):
+        super().__init__(parent = parent)
 
         # Container Pixmaps # 
 

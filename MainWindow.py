@@ -4,6 +4,7 @@ from PyQt6 import QtGui as qtg
 from UI.MainWindowUI import Ui_MainWindow
 from MaskViewer import PaintInterface
 from Core import Project
+from UI.NotSavedUI import NotSavedDialog
 
 MIN_SIZE, MAX_SIZE = 0, 16777215
 
@@ -19,7 +20,6 @@ class MainWindow(qtw.QMainWindow):
         self.side_menu_toggle_speed = 800
         self.side_menu_swap_speed = 120
         self.easing_curve = qtc.QEasingCurve(qtc.QEasingCurve.Type.OutQuint)
-
     
         self.ui.splitter.setCollapsible(0, True)
         self.ui.splitter.setCollapsible(1, False)
@@ -49,6 +49,10 @@ class MainWindow(qtw.QMainWindow):
 
         self.ui.next_frame_button.clicked.connect(lambda: self.ui.frame_slider.setValue(self.ui.frame_slider.value()+1))
         self.ui.previous_frame_button.clicked.connect(lambda: self.ui.frame_slider.setValue(self.ui.frame_slider.value()-1))
+
+        self.info_opacity = qtw.QGraphicsOpacityEffect(self.ui.info_label)
+        self.info_opacity.setOpacity(0)
+        self.ui.info_label.setGraphicsEffect(self.info_opacity)
 
     ######################### Side Menu Toggle #########################
 
@@ -135,6 +139,7 @@ class MainWindow(qtw.QMainWindow):
         else:
             self.active_project.save_project()
         self.update_settings()
+        self.notify_save()
 
     def save_project_as(self):
         file_path = qtw.QFileDialog.getSaveFileName(self, 'Save File', filter='JSON Files (*.json)')
@@ -143,18 +148,22 @@ class MainWindow(qtw.QMainWindow):
         self.active_project.set_project_path(file_path[0])
         self.active_project.save_project()
         self.update_settings()
-
+        self.notify_save()
 
     def open_project(self):
-        if self.active_project.is_saved() == False:
-            print('not saved')
-            ######################### To Be Implemented #########################
+        self.check_if_saved()
         file_path = qtw.QFileDialog.getOpenFileName(self, 'Open File', filter='JSON Files (*.json)')
         if file_path[0] == '':
             return
         self.active_project = Project.Project()    
         self.active_project.open_project(file_path[0])  
         self.update_settings()
+
+    def check_if_saved(self):
+        if self.active_project.is_saved() == False:
+            dialog = NotSavedDialog(self)
+            if dialog.exec():
+                self.save_project()
 
     def set_output_path(self):
         file_path = qtw.QFileDialog.getExistingDirectory(self, 'Set Output Directory')
@@ -167,5 +176,22 @@ class MainWindow(qtw.QMainWindow):
     def set_clip_directory(self):
         file_path = qtw.QFileDialog.getExistingDirectory(self, 'Set Clip Directory')
         self.active_project.set_clip_path(file_path)
+
+    def closeEvent(self, e):
+        self.check_if_saved()
+        e.accept()
+    
+    def notify_save(self):
+        self.ui.info_label.setText('Saved Project File')
+        self.fade_info()
+    
+    def fade_info(self):
+        self.animation = qtc.QPropertyAnimation(self.info_opacity, b'opacity')
+        self.animation.setStartValue(1)
+        self.animation.setEndValue(0)
+        self.animation.setDuration(500)
+        self.animation.finished.connect(lambda: self.ui.info_label.setText(''))
+        self.info_opacity.setOpacity(1)
+        qtc.QTimer.singleShot(1000, lambda:self.animation.start())
 
 

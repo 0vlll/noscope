@@ -4,7 +4,7 @@ from PyQt6 import QtGui as qtg
 from .ImageContainer import ImageContainer
 
 class PaintInterface(qtw.QScrollArea):
-    def __init__(self, parent):
+    def __init__(self, parent = None):
         super().__init__(parent = parent)
 
         self._mouse_last_x = None
