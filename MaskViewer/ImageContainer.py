@@ -17,6 +17,7 @@ class ImageContainer(qtw.QLabel):
 
         self._opacity = 1
         self._max_pixmap_dimension = None
+        self._output_changed = False
 
         # Widget Attributes # 
 
@@ -28,6 +29,7 @@ class ImageContainer(qtw.QLabel):
         self._pen_color = qtg.QColor(0, 0, 0)
     
     def load_pixmap(self, pixmap: qtg.QPixmap):
+        self._output_changed = False
         self.setPixmap(pixmap)
         self._master_pixmap = qtg.QPixmap(pixmap)
         self._original_pixmap = qtg.QPixmap(pixmap)
@@ -77,6 +79,7 @@ class ImageContainer(qtw.QLabel):
         master_painter.drawLine(self._last_x / ratio, self._last_y / ratio, mouse_x / ratio, mouse_y / ratio)
         master_painter.end()
         self._master_pixmap = qtg.QPixmap(master_pixmap)
+        self._output_changed = True
         
     def get_master_pixmap(self):
         return self._master_pixmap
@@ -100,6 +103,9 @@ class ImageContainer(qtw.QLabel):
     def set_zoom(self, dimension):
         self._max_pixmap_dimension = dimension
         self.update_pixmap()
+
+    def output_changed(self):
+        return self._output_changed
 
     # Events #
 
@@ -125,8 +131,6 @@ class ImageContainer(qtw.QLabel):
 
         self._last_x = mouse_x
         self._last_y = mouse_y
-
-    
 
     def mouseReleaseEvent(self, e):
         self._last_x = None

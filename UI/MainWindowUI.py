@@ -22,7 +22,6 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.centralwidget)
         self.verticalLayout.setContentsMargins(0, 20, 0, 0)
-        self.verticalLayout.setSpacing(0)
         self.verticalLayout.setObjectName("verticalLayout")
         self.widget = QtWidgets.QWidget(self.centralwidget)
         self.widget.setObjectName("widget")
@@ -117,8 +116,9 @@ class Ui_MainWindow(object):
         self.vertical_divider_side_menu.setObjectName("vertical_divider_side_menu")
         self.horizontalLayout.addWidget(self.vertical_divider_side_menu)
         self.splitter = QtWidgets.QSplitter(self.widget)
+        self.splitter.setLineWidth(0)
         self.splitter.setOrientation(QtCore.Qt.Orientations.Horizontal)
-        self.splitter.setHandleWidth(20)
+        self.splitter.setHandleWidth(2)
         self.splitter.setChildrenCollapsible(False)
         self.splitter.setObjectName("splitter")
         self.scrollArea = QtWidgets.QScrollArea(self.splitter)
@@ -140,7 +140,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setAlignment(QtCore.Qt.Alignment.AlignCenter)
         self.scrollArea.setObjectName("scrollArea")
         self.scrollAreaWidgetContents = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 379, 694))
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 388, 684))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -148,7 +148,7 @@ class Ui_MainWindow(object):
         self.scrollAreaWidgetContents.setSizePolicy(sizePolicy)
         self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
         self.horizontalLayout_4 = QtWidgets.QHBoxLayout(self.scrollAreaWidgetContents)
-        self.horizontalLayout_4.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_4.setContentsMargins(0, 0, 12, 0)
         self.horizontalLayout_4.setSpacing(0)
         self.horizontalLayout_4.setObjectName("horizontalLayout_4")
         self.stackedWidget = QtWidgets.QStackedWidget(self.scrollAreaWidgetContents)
@@ -251,6 +251,22 @@ class Ui_MainWindow(object):
 "}")
         self.save_project_button.setObjectName("save_project_button")
         self.verticalLayout_7.addWidget(self.save_project_button)
+        self.open_project_button = QtWidgets.QPushButton(self.file_button_container)
+        self.open_project_button.setMinimumSize(QtCore.QSize(0, 65))
+        self.open_project_button.setStyleSheet("QPushButton{\n"
+"    border: none;\n"
+"    background-color: rgb(33,33, 40);\n"
+"    color:white;\n"
+"    border-radius: 15px;\n"
+"}\n"
+"QPushButton:hover{\n"
+"    background-color: rgb(37, 37, 46);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"    background-color: rgb(47, 48, 60);\n"
+"}")
+        self.open_project_button.setObjectName("open_project_button")
+        self.verticalLayout_7.addWidget(self.open_project_button)
         self.verticalLayout_4.addWidget(self.file_button_container, 0, QtCore.Qt.Alignment.AlignTop)
         self.verticalLayout_4.setStretch(0, 1)
         self.verticalLayout_4.setStretch(1, 6)
@@ -606,7 +622,7 @@ class Ui_MainWindow(object):
         self.workspace.setObjectName("workspace")
         self.horizontalLayout_6 = QtWidgets.QHBoxLayout(self.workspace)
         self.horizontalLayout_6.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout_6.setSpacing(35)
+        self.horizontalLayout_6.setSpacing(25)
         self.horizontalLayout_6.setObjectName("horizontalLayout_6")
         self.vertical_divider_workspace = QtWidgets.QWidget(self.workspace)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
@@ -627,7 +643,34 @@ class Ui_MainWindow(object):
         self.mask_operations_container.setObjectName("mask_operations_container")
         self.verticalLayout_14 = QtWidgets.QVBoxLayout(self.mask_operations_container)
         self.verticalLayout_14.setContentsMargins(0, -1, 0, -1)
+        self.verticalLayout_14.setSpacing(0)
         self.verticalLayout_14.setObjectName("verticalLayout_14")
+        self.frame_display_container = QtWidgets.QWidget(self.mask_operations_container)
+        self.frame_display_container.setMinimumSize(QtCore.QSize(0, 30))
+        self.frame_display_container.setMaximumSize(QtCore.QSize(16777215, 30))
+        self.frame_display_container.setStyleSheet("QWidget{\n"
+"    background-color: rgb(33,33, 40);\n"
+"    border-radius: 15px;\n"
+"}")
+        self.frame_display_container.setObjectName("frame_display_container")
+        self.horizontalLayout_8 = QtWidgets.QHBoxLayout(self.frame_display_container)
+        self.horizontalLayout_8.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_8.setObjectName("horizontalLayout_8")
+        self.frame_label = QtWidgets.QLabel(self.frame_display_container)
+        self.frame_label.setStyleSheet("QLabel{\n"
+"    color: white;\n"
+"}")
+        self.frame_label.setAlignment(QtCore.Qt.Alignment.AlignRight|QtCore.Qt.Alignment.AlignTrailing|QtCore.Qt.Alignment.AlignVCenter)
+        self.frame_label.setObjectName("frame_label")
+        self.horizontalLayout_8.addWidget(self.frame_label)
+        self.frame_spin_box = QtWidgets.QSpinBox(self.frame_display_container)
+        self.frame_spin_box.setStyleSheet("QSpinBox{\n"
+"    color: white;\n"
+"}")
+        self.frame_spin_box.setButtonSymbols(QtWidgets.QAbstractSpinBox.ButtonSymbols.NoButtons)
+        self.frame_spin_box.setObjectName("frame_spin_box")
+        self.horizontalLayout_8.addWidget(self.frame_spin_box)
+        self.verticalLayout_14.addWidget(self.frame_display_container)
         self.paint_interface_container = QtWidgets.QWidget(self.mask_operations_container)
         self.paint_interface_container.setObjectName("paint_interface_container")
         self.verticalLayout_14.addWidget(self.paint_interface_container)
@@ -756,7 +799,7 @@ class Ui_MainWindow(object):
         self.menuBar.addAction(self.menuHelp.menuAction())
 
         self.retranslateUi(MainWindow)
-        self.stackedWidget.setCurrentIndex(1)
+        self.stackedWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -767,6 +810,7 @@ class Ui_MainWindow(object):
         self.image_dir_button.setText(_translate("MainWindow", "Get Image Directory"))
         self.output_dir_button.setText(_translate("MainWindow", "Set Output Directory"))
         self.save_project_button.setText(_translate("MainWindow", "Save Project File"))
+        self.open_project_button.setText(_translate("MainWindow", "Open Project File"))
         self.mask_title.setText(_translate("MainWindow", "Mask Settings"))
         self.change_pen_button.setText(_translate("MainWindow", "Change Pen"))
         self.color_button.setText(_translate("MainWindow", "Change Pen Color"))
@@ -782,6 +826,7 @@ class Ui_MainWindow(object):
         self.set_iterations_button.setText(_translate("MainWindow", "Set Crabcut Iterations"))
         self.generation_status.setSuffix(_translate("MainWindow", "%"))
         self.generation_status_label.setText(_translate("MainWindow", "Generation Progress"))
+        self.frame_label.setText(_translate("MainWindow", "Frame:"))
         self.previous_frame_button.setText(_translate("MainWindow", "<<"))
         self.next_frame_button.setText(_translate("MainWindow", ">>"))
         self.menuFile.setTitle(_translate("MainWindow", "File"))

@@ -9,7 +9,6 @@ class Project():
         self._output_path = None
         self._project_path = None
         self._save_up_to_date = True
-        self._clip_frames = 250
 
     def save_project(self):
         if self._project_path == None:
@@ -69,12 +68,6 @@ class Project():
     def set_not_saved(self):
         self._save_up_to_date = False
 
-    def set_frame_count(self, frames):
-        ######################### Add Implementation for counting and setting #########################
-        self._clip_frames = frames
-
-    def get_frame_count(self):
-        return self._clip_frames
 
 
     

@@ -30,7 +30,7 @@
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <property name="spacing">
-     <number>0</number>
+     <number>-1</number>
     </property>
     <property name="leftMargin">
      <number>0</number>
@@ -254,11 +254,14 @@ QPushButton:pressed{
        </item>
        <item>
         <widget class="QSplitter" name="splitter">
+         <property name="lineWidth">
+          <number>0</number>
+         </property>
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
          </property>
          <property name="handleWidth">
-          <number>20</number>
+          <number>2</number>
          </property>
          <property name="childrenCollapsible">
           <bool>false</bool>
@@ -317,8 +320,8 @@ QPushButton:pressed{
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>379</width>
-             <height>694</height>
+             <width>388</width>
+             <height>684</height>
             </rect>
            </property>
            <property name="sizePolicy">
@@ -338,7 +341,7 @@ QPushButton:pressed{
              <number>0</number>
             </property>
             <property name="rightMargin">
-             <number>0</number>
+             <number>12</number>
             </property>
             <property name="bottomMargin">
              <number>0</number>
@@ -367,7 +370,7 @@ QPushButton:pressed{
                <string notr="true"/>
               </property>
               <property name="currentIndex">
-               <number>1</number>
+               <number>0</number>
               </property>
               <widget class="QWidget" name="file_page">
                <property name="styleSheet">
@@ -550,6 +553,33 @@ QPushButton:pressed{
                      </property>
                      <property name="text">
                       <string>Save Project File</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="open_project_button">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>65</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QPushButton{
+	border: none;
+	background-color: rgb(33,33, 40);
+	color:white;
+	border-radius: 15px;
+}
+QPushButton:hover{
+	background-color: rgb(37, 37, 46);
+}
+QPushButton:pressed{
+	background-color: rgb(47, 48, 60);
+}</string>
+                     </property>
+                     <property name="text">
+                      <string>Open Project File</string>
                      </property>
                     </widget>
                    </item>
@@ -1274,7 +1304,7 @@ QPushButton:pressed{
           </property>
           <layout class="QHBoxLayout" name="horizontalLayout_6">
            <property name="spacing">
-            <number>35</number>
+            <number>25</number>
            </property>
            <property name="leftMargin">
             <number>0</number>
@@ -1322,12 +1352,78 @@ QPushButton:pressed{
            <item>
             <widget class="QWidget" name="mask_operations_container" native="true">
              <layout class="QVBoxLayout" name="verticalLayout_14">
+              <property name="spacing">
+               <number>0</number>
+              </property>
               <property name="leftMargin">
                <number>0</number>
               </property>
               <property name="rightMargin">
                <number>0</number>
               </property>
+              <item>
+               <widget class="QWidget" name="frame_display_container" native="true">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>30</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>30</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QWidget{
+	background-color: rgb(33,33, 40);
+	border-radius: 15px;
+}</string>
+                </property>
+                <layout class="QHBoxLayout" name="horizontalLayout_8">
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <widget class="QLabel" name="frame_label">
+                   <property name="styleSheet">
+                    <string notr="true">QLabel{
+	color: white;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>Frame:</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QSpinBox" name="frame_spin_box">
+                   <property name="styleSheet">
+                    <string notr="true">QSpinBox{
+	color: white;
+}</string>
+                   </property>
+                   <property name="buttonSymbols">
+                    <enum>QAbstractSpinBox::NoButtons</enum>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
               <item>
                <widget class="QWidget" name="paint_interface_container" native="true"/>
               </item>

@@ -65,7 +65,7 @@ class PaintInterface(qtw.QScrollArea):
         self.top_container.unload_pixmap()
         self.backdrop_container.unload_pixmap()
 
-    def get_mask(self):
+    def get_output(self):
         return self.top_container.get_master_pixmap()
 
     def set_opacity(self, value):
@@ -113,12 +113,9 @@ class PaintInterface(qtw.QScrollArea):
             self._last_midpoint.setY(self.verticalScrollBar().value()+self.height() / 2)
             e.ignore()
         
-            
-        
     def mouseReleaseEvent(self, e):
         self._mouse_last_x = None
         self._mouse_last_y = None
-
 
     def wheelEvent(self, e):
         e.ignore()
@@ -137,3 +134,6 @@ class PaintInterface(qtw.QScrollArea):
         self._zoom_last_y = self.top_container.pixmap().height()
         self.top_container.update_pixmap()
         self.backdrop_container.update_pixmap()
+
+    def output_changed(self):
+        return self.top_container.output_changed()
